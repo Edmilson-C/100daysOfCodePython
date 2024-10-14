@@ -7,11 +7,13 @@ print("####################################################")
 print("#                 Make your choice                 #")
 print("####################################################")
 
+options = ["Rock", "Paper", "Scissors"]
+
 user = int(input("Type 0 - Rock, 1 - Paper, 2 - Scissors:\n"))
-print(user)
+print(options[user])
 
 machine = random.randint(0, 2)
-print(f"Computer chooses {machine}")
+print(f"Computer chose {options[machine]}")
 
 if user == machine:
     print("It's a draw")
