@@ -1,18 +1,17 @@
 from random import randint
+from word_list import list
 
 print("#########################################")
 print("#      Welcome to the Pyhangman game    #")
 print("#########################################\n")
 
-words_list = ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"]
-
-chosen_word = words_list[randint(0, len(words_list) -1)]
+chosen_word = list[randint(0, len(list) -1)]
 
 lives = 6
 blanks_filled = 0
 users_results = ["_"] * len(chosen_word)
 
-print("Guess the day of the week")
+print("Guess the word")
 print(f"Lives: {lives}")
 print("_ " * len(chosen_word))
 
@@ -33,22 +32,6 @@ while lives > 0 and blanks_filled < len(chosen_word):
 
 if lives == 0:
     print("You lost!")
+    print(f"The chosen word was {chosen_word}")
 else:
     print("You won!")
-
-
-
-
-
-
-
-
-# while users_choice.strip().casefold() != chosen_letter.strip().casefold():
-#     users_choice = input("Guess the letter: ")
-#
-#     if users_choice.strip().casefold() != chosen_letter.strip().casefold():
-#         print("Wrong letter")
-#     else:
-#         print("Right letter")
-#         print(chosen_word)
-#         print(chosen_letter)
