@@ -1,4 +1,4 @@
-from random import shuffle, randint
+from random import shuffle, randint, choice
 from string import ascii_letters, digits
 
 list_symbols = ['!', '#', '$', '%', '&', '(', ')', '*', '+']
@@ -8,17 +8,9 @@ symbols = randint(2, 4)
 numbers = randint(2, 4)
 
 def generate_password():
-    password = []
     generated_password = ""
-
-    for _ in range(letters):
-        password.append(ascii_letters[randint(0, len(ascii_letters) - 1)])
-
-    for _ in range(numbers):
-        password.append(digits[randint(0, len(digits) - 1)])
-
-    for _ in range(symbols):
-        password.append(list_symbols[randint(0, len(list_symbols) - 1)])
+    password = ([choice(ascii_letters) for _ in range(letters)] + [choice(digits) for _ in range(numbers)] +
+                [choice(list_symbols) for _ in range(symbols)])
 
     shuffle(password)
 
